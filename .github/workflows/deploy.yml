@@ -45,14 +45,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
     - name: Deploy to Vercel
-      uses: vercel/vercel-action@v33
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-        production: true
+  uses: amondnet/vercel-action@v42.1.0
+  with:
+    vercel-token: ${{ secrets.VERCEL_TOKEN }}
+    vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+    vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+    production: true
+    github-token: ${{ secrets.GITHUB_TOKEN }}
 
     # OR use Netlify instead of Vercel:
     # - name: Deploy to Netlify
